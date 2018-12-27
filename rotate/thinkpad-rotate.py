@@ -23,7 +23,7 @@ https://gist.githubusercontent.com/ei-grad/4d9d23b1463a99d24a8d/raw/rotate.py
 
 ### BEGIN Configurables
 
-rotate_pens = False # Set false if your DE rotates pen for you
+rotate_pens = True # Set false if your DE rotates pen for you
 disable_touchpads = False # Don't use in conjunction with tablet-mode
 
 ### END Configurables
@@ -82,20 +82,30 @@ STATES = [
 
 def rotate(state):
     s = STATES[state]
-    check_call(['xrandr', '-o', s['rot']],env=env)
+
+    cmd=['xrandr', '-o', s['rot']]
+    print(cmd)
+    check_call(cmd,env=env)
+
     for dev in touchscreens if disable_touchpads else (touchscreens + touchpads):
-        check_call([
+        cmd =[
             'xinput', 'set-prop', dev,
             'Coordinate Transformation Matrix',
-        ] + s['coord'].split(),env=env)
+        ] + s['coord'].split()
+        print(cmd)
+        check_call(cmd,env=env)
     if rotate_pens:
         for dev in wacoms:
-            check_call([
+            cmd=[
                 'xsetwacom','set', dev,
-                'rotate',s['pen']],env=env)
+                'rotate',s['pen']]
+            print(cmd)
+            check_call(cmd,env=env)
     if disable_touchpads:
         for dev in touchpads:
-            check_call(['xinput', s['touchpad'], dev],env=env)
+            cmd = ['xinput', s['touchpad'], dev]
+            print(cmd)
+            check_call(cmd,env=env)
 
 def read_accel(fp):
     fp.seek(0)
