@@ -5,7 +5,7 @@
 #
 # Must be run as user running X11.
 #
-# https://github.com/ffejery/thinkpad-l380-yoga-scripts
+# https://github.com/ffejery/thinkpad-x380-yoga-scripts
 #
 # Originally from AdmiralAkber:
 # https://github.com/admiralakber/thinkpad-yoga-scripts
@@ -13,13 +13,11 @@
 
 case "$1" in
     off)
-	xinput --set-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 0
-	xinput --set-prop "ETPS/2 Elantech TrackPoint" "Device Enabled" 0
-	sudo -b -u \#1000 onboard
+	xinput disable "ETPS/2 Elantech Touchpad"
+	nohup onboard >/dev/null 2>&1 &
 	;;
     on)
-	xinput --set-prop "ETPS/2 Elantech Touchpad" "Device Enabled" 1
-	xinput --set-prop "ETPS/2 Elantech TrackPoint" "Device Enabled" 1
+	xinput enable "ETPS/2 Elantech Touchpad"
 	killall onboard
 	;;
 esac

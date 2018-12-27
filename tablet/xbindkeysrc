@@ -1,6 +1,0 @@
-"/bin/bash /opt/thinkpad-l380-yoga-scripts/tablet/mouse-toggle.sh off"
-    m:0x0 + c:93
-"/bin/bash /opt/thinkpad-l380-yoga-scripts/tablet/mouse-toggle.sh on"
-    m:0x0 + c:97
-
-		

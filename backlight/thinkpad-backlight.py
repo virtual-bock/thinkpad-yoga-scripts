@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+ 
 import glob
 import os.path
 import sys
@@ -11,9 +11,9 @@ LS_LOW = 1
 # max value of light sensor for automatic adjustment of backlight
 LS_HIGH = 500
 # scale factor of backlight value exponential function
-SCALE = 89
+SCALE =  10
 # exponent scaling factor of backlight exponential function
-EXP = 0.004615
+EXP = 0.007#4615
 # minimum change in sensor intensity before backlight intensity is changed
 TOL = 5
 # time in seconds between successive sensor reads

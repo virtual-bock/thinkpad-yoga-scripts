@@ -6,7 +6,7 @@ After=display-manager.service
 
 [Service]
 Type=simple
-ExecStart=/bin/bash /opt/thinkpad-l380-yoga-scripts/wacom/thinkpad-yoga-prox.sh
+ExecStart=/bin/bash /opt/thinkpad-x380-yoga-scripts/wacom/thinkpad-yoga-prox.sh
 KillMode=process
 User=%i
 Environment="DISPLAY=:0" "XAUTHORITY=/home/%i/.Xauthority"
