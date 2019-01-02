@@ -2,4 +2,5 @@
 # This is called when the lid is placed in tablet position on
 # Lenovo ThinkPad X380 Tablet
 event=video/tabletmode TBLT 0000008A 00000001
-action=/opt/thinkpad-x380-yoga-scripts/tablet/mouse-toggle.sh on
+action=/etc/acpi/mouse-toggle.sh off
+
