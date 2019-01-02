@@ -1,7 +1,17 @@
 further edits to the L380 scripts to fit the x380. This is because there appears to be no tablet mode hotkey for the x380.
 
+Status:
+- [x] rotatation
+- [x] brightness adjustment
+- [x] turn off touchscreen when using pen
+- [ ] turn off touchpad and trackpoint in tablet mode
+  - [x] Changed to use acpi hook since it lacks hotkey
+  - [ ] BUG: doesn't always fire
+  - [ ] BUG: touchpad wont enable again, this seems to be a driver bug
+
 forked from :https://github.com/ffejery/thinkpad-l380-yoga-scripts
 
+For more tweaks for Xubuntu on a Thinkpad x380 yoga see [this gist](https://gist.github.com/wassname/4aec086afe518dfbceaf00577442c432)
 
 # Dependencies
 - xrandr
@@ -36,7 +46,7 @@ sudo systemctl status yoga-rotate@${USER}.service
 #sudo systemctl status yoga-backlight.service
 
 # install acpi hooks (since the tablet mode acpi doesn't seem to register as a hotkey on the x380)
-sudo cp ./tablet/thinkpad-* /etc/acpi/events
+sudo cp -r ./tablet/* /etc/acpi/ 
 ```
 
 # Scripts should fix:
