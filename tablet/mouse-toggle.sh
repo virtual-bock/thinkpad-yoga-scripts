@@ -16,7 +16,9 @@ case "$1" in
 	# TODO do touchpad buttons
 	# Trackpoint includes the red joystick and also the mouse buttons
 	xinput disable "ETPS/2 Elantech TrackPoint"
-	xinput disable "ETPS/2 Elantech Touchpad"
+    # BUG workaround: using xinput to turn the touchpad off works, but I can't turn it back on without restarting. synclient works however.
+	#xinput disable "ETPS/2 Elantech Touchpad"
+    synclient TouchpadOff=1 
 	nohup onboard >/dev/null 2>&1 &
 	;;
     on)
@@ -24,7 +26,8 @@ case "$1" in
 	# for some reason this isn't working, we can't enable the touchpad again! 
 
 	xinput enable "ETPS/2 Elantech Touchpad"
-	xinput enable "ETPS/2 Elantech TrackPoint"
+	#ixinput enable "ETPS/2 Elantech TrackPoint"
+    synclient TouchpadOff=0
 	killall onboard
 	;;
 	*)
