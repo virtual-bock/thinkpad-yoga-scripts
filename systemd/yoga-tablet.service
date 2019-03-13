@@ -1,0 +1,15 @@
+[Unit]
+Description=[ThinkPad Yoga] Tablet mode
+Requires=display-manager.service
+After=display-manager.service
+
+[Service]
+ExecStart=/bin/bash /opt/thinkpad-x380-yoga-scripts/tablet/mouse-toggle.sh
+KillMode=process
+Environment="DISPLAY=:0"
+Type=forking
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

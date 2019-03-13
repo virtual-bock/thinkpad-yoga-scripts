@@ -25,8 +25,8 @@ case "$1" in
 	logger "Tablet mode off, mouse $1"
 	# for some reason this isn't working, we can't enable the touchpad again! 
 
-	xinput enable "ETPS/2 Elantech Touchpad"
-	#ixinput enable "ETPS/2 Elantech TrackPoint"
+	#xinput enable "ETPS/2 Elantech Touchpad"
+	xinput enable "ETPS/2 Elantech TrackPoint"
     synclient TouchpadOff=0
 	killall onboard
 	;;
