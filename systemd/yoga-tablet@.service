@@ -5,7 +5,7 @@ After=display-manager.service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/env bash /opt/thinkpad-x380-yoga-scripts/tablet/tablet_monitor.sh
+ExecStart=/usr/bin/env bash /opt/thinkpad-x380-yoga-scripts/tablet/acpi_tablet_monitor.sh
 KillMode=process
 User=%i
 Environment="DISPLAY=:0" "XAUTHORITY=/home/%i/.Xauthority"

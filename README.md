@@ -1,24 +1,20 @@
-further edits to the L380 scripts to fit the x380. This is because there appears to be no tablet mode hotkey for the x380.
+This repo is forked from https://github.com/ffejery/thinkpad-l380-yoga-scripts with edits for the x380. Differences are:
 
-Status:
+- we don't need to disable the keyboard and buttons depress
+- there seems to be no hotkey for tablet mode, so we need a workaround
+
+
+Status: Working!
 - [x] rotatation
 - [x] brightness adjustment
 - [x] turn off touchscreen when using pen
-- [ ] turn off touchpad and trackpoint in tablet mode
-  - [x] Changed to use acpi hook since it lacks hotkey
-    - [ ] BUG: doesn't always fire
-    - [x] I'm adding this to startup `/usr/bin/acpi_listen | /opt/thinkpad-x380-yoga-scripts/tablet/acpi_tablet_monitor.sh`
-  - [x] BUG: touchpad wont enable again, this seems to be a driver bug
-
-forked from :https://github.com/ffejery/thinkpad-l380-yoga-scripts
+- [x] tablet mode turns off touchpad, click buttons, and trackpoint (and turns on screen keyboard)
 
 For more tweaks for Xubuntu on a Thinkpad x380 yoga see [this gist](https://gist.github.com/wassname/4aec086afe518dfbceaf00577442c432)
 
 # Dependencies
 - xrandr
 - xinput
-- xbindkeys
-- kbd (for setkeycodes)
 - systemd
 - gawk
 - xsetwacom (optional for wacom rotation)
@@ -28,9 +24,13 @@ For more tweaks for Xubuntu on a Thinkpad x380 yoga see [this gist](https://gist
 
 ```sh
 
+# place it in this exact location
 git clone https://github.com/wassname/thinkpad-x380-yoga-scripts /opt/thinkpad-x380-yoga-scripts
 
+# copy scripts to systemd
 sudo cp /opt/thinkpad-x380-yoga-scripts/systemd/* /etc/systemd/system/
+
+# enable scripts
 sudo systemctl enable yoga-tablet@${USER}.service
 sudo systemctl start yoga-tablet@${USER}.service
 sudo systemctl status yoga-tablet@${USER}.service
@@ -44,10 +44,10 @@ sudo systemctl enable yoga-rotate@${USER}.service
 sudo systemctl start yoga-rotate@${USER}.service
 sudo systemctl status yoga-rotate@${USER}.service
 
-# I prefer manual
-#sudo systemctl enable yoga-backlight.service
-#sudo systemctl start yoga-backlight.service
-#sudo systemctl status yoga-backlight.service
+# don't run these if you prefer manual backlight control
+sudo systemctl enable yoga-backlight.service
+sudo systemctl start yoga-backlight.service
+sudo systemctl status yoga-backlight.service
 
 ```
 
