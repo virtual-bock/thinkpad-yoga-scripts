@@ -1,18 +1,25 @@
-This repo is forked from https://github.com/ffejery/thinkpad-l380-yoga-scripts with edits for the x380. Differences are:
+# Yoga scripts for the Thinkpad X380 on linux
 
-- we don't need to disable the keyboard and buttons depress
-- there seems to be no hotkey for tablet mode, so we need a workaround
+This contains systemd scripts to allow use of tablet mode, pen, auto rotation, and auto brightness on a Thinkpad X380 Yoga.
 
+## Status
 
 Status: Working!
+
 - [x] rotatation
 - [x] brightness adjustment
 - [x] turn off touchscreen when using pen
 - [x] tablet mode turns off touchpad, click buttons, and trackpoint (and turns on screen keyboard)
 
+This repo is forked from https://github.com/ffejery/thinkpad-l380-yoga-scripts with edits for the x380. Differences are:
+
+- we don't need to disable the keyboard and buttons depress
+- there seems to be no hotkey for tablet mode, so we need a workaround
+
 For more tweaks for Xubuntu on a Thinkpad x380 yoga see [this gist](https://gist.github.com/wassname/4aec086afe518dfbceaf00577442c432)
 
-# Dependencies
+## Dependencies
+
 - xrandr
 - xinput
 - systemd
@@ -20,7 +27,7 @@ For more tweaks for Xubuntu on a Thinkpad x380 yoga see [this gist](https://gist
 - xsetwacom (optional for wacom rotation)
 - onboard (optional for onscreen keyboard)
 
-# Manual installation
+## Manual installation
 
 ```sh
 
@@ -51,7 +58,7 @@ sudo systemctl status yoga-backlight.service
 
 ```
 
-# Scripts should fix:
+## Scripts should fix:
 
 - Screen rotation with accelerometer, including touchscreen, Wacom,
   and Touchpad/TrackPoint geometries
@@ -60,7 +67,7 @@ sudo systemctl status yoga-backlight.service
 
 - Disabling of Clickpad and TrackPoint when moving to tablet mode
 
-# Usage/Customization:
+## Usage/Customization:
 
 
 Depending whether or not your DE rotates the Wacom orientation with
