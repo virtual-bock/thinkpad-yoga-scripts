@@ -1,6 +1,0 @@
-# /etc/acpi/events/thinkpad-tablet-enabled
-# This is called when the lid is placed in tablet position on
-# Lenovo ThinkPad X380 Tablet
-event=video/tabletmode TBLT 0000008A 00000001
-action=/etc/acpi/mouse-toggle.sh off
-

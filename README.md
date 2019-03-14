@@ -6,7 +6,8 @@ Status:
 - [x] turn off touchscreen when using pen
 - [ ] turn off touchpad and trackpoint in tablet mode
   - [x] Changed to use acpi hook since it lacks hotkey
-  - [ ] BUG: doesn't always fire
+    - [ ] BUG: doesn't always fire
+    - [x] I'm adding this to startup `/usr/bin/acpi_listen | /opt/thinkpad-x380-yoga-scripts/tablet/acpi_tablet_monitor.sh`
   - [x] BUG: touchpad wont enable again, this seems to be a driver bug
 
 forked from :https://github.com/ffejery/thinkpad-l380-yoga-scripts
@@ -48,10 +49,6 @@ sudo systemctl status yoga-rotate@${USER}.service
 sudo systemctl enable yoga-tablet.service
 sudo systemctl start yoga-tablet.service
 sudo systemctl status yoga-tablet.service
-
-
-# install acpi hooks (since the tablet mode acpi doesn't seem to register as a hotkey on the x380)
-sudo cp -r ./tablet/* /etc/acpi/ 
 ```
 
 # Scripts should fix:
