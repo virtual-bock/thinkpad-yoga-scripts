@@ -4,12 +4,9 @@ Requires=display-manager.service
 After=display-manager.service
 
 [Service]
-ExecStart=/bin/bash -c '/usr/bin/acpi_listen | /opt/thinkpad-x380-yoga-scripts/tablet/acpi_tablet_monitor.sh'
+ExecStart=/bin/bash /opt/thinkpad-x380-yoga-scripts/tablet/tablet_monitor.sh
 KillMode=process
-Environment="DISPLAY=:0"
 Type=simple
-Restart=always
-RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
