@@ -31,6 +31,9 @@ For more tweaks for Xubuntu on a Thinkpad x380 yoga see [this gist](https://gist
 git clone https://github.com/wassname/thinkpad-x380-yoga-scripts /opt/thinkpad-x380-yoga-scripts
 
 sudo cp /opt/thinkpad-x380-yoga-scripts/systemd/* /etc/systemd/system/
+sudo systemctl enable yoga-tablet@${USER}.service
+sudo systemctl start yoga-tablet@${USER}.service
+sudo systemctl status yoga-tablet@${USER}.service
 
 sudo systemctl enable wacom-proximity@${USER}.service
 sudo systemctl start wacom-proximity@${USER}.service
@@ -46,9 +49,6 @@ sudo systemctl status yoga-rotate@${USER}.service
 #sudo systemctl start yoga-backlight.service
 #sudo systemctl status yoga-backlight.service
 
-sudo systemctl enable yoga-tablet.service
-sudo systemctl start yoga-tablet.service
-sudo systemctl status yoga-tablet.service
 ```
 
 # Scripts should fix:

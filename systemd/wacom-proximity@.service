@@ -3,7 +3,6 @@ Description=[ThinkPad Yoga] Wacom digitizer proximity detection
 Requires=display-manager.service
 After=display-manager.service
 
-
 [Service]
 Type=simple
 ExecStart=/bin/bash /opt/thinkpad-x380-yoga-scripts/wacom/thinkpad-yoga-prox.sh

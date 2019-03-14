@@ -4,9 +4,11 @@ Requires=display-manager.service
 After=display-manager.service
 
 [Service]
-ExecStart=/bin/bash /opt/thinkpad-x380-yoga-scripts/tablet/tablet_monitor.sh
-KillMode=process
 Type=simple
+ExecStart=/usr/bin/env bash /opt/thinkpad-x380-yoga-scripts/tablet/tablet_monitor.sh
+KillMode=process
+User=%i
+Environment="DISPLAY=:0" "XAUTHORITY=/home/%i/.Xauthority"
 
 [Install]
 WantedBy=multi-user.target
