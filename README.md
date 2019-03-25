@@ -10,6 +10,7 @@ Status: Working!
 - [x] brightness adjustment
 - [x] turn off touchscreen when using pen
 - [x] tablet mode turns off touchpad, click buttons, and trackpoint (and turns on screen keyboard)
+- [ ] sometimes the tablet mode acpi event's arn't reported after some time (or after suspend?). Workout: use a launcher on the panel
 
 This repo is forked from https://github.com/ffejery/thinkpad-l380-yoga-scripts with edits for the x380. Differences are:
 
