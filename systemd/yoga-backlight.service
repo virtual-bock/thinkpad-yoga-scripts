@@ -3,7 +3,7 @@ Description=[ThinkPad Yoga] Automatic backlight adjustment
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/env python /opt/thinkpad-x380-yoga-scripts/backlight/thinkpad-backlight.py
+ExecStart=/usr/bin/env python /opt/thinkpad-yoga-scripts/backlight/thinkpad-backlight.py
 KillMode=process
 
 [Install]
