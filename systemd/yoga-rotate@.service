@@ -5,7 +5,7 @@ After=display-manager.service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/env python2 /opt/thinkpad-x380-yoga-scripts/rotate/thinkpad-rotate.py
+ExecStart=/usr/bin/env python /opt/thinkpad-x380-yoga-scripts/rotate/thinkpad-rotate.py
 KillMode=process
 User=%i
 Environment="DISPLAY=:0" "XAUTHORITY=/home/%i/.Xauthority"
