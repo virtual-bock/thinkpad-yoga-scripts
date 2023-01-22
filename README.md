@@ -14,7 +14,8 @@ Status: Working!
 
 This repo is forked from https://github.com/IslamAlam/thinkpad-x380-yoga-scripts with edits for the Yoga 12. Differences are:
 
-
+Status: Development
+- Change scripts from Python2 to Python3
 ~~- we don't need to disable the keyboard as the buttons depress via hardware~~
 ~~- there seems to be no hotkey for tablet mode, so we need a workaround (I use acpi listen)~~
 ~~- there seems to be a bug where xinput can't enable the touchpad once it's disabled, so we need another workaround~~
