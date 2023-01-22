@@ -1,16 +1,16 @@
-# Yoga scripts for the Thinkpad X380 on linux
+# Yoga scripts for the Thinkpad Yoga 12
 
-This contains systemd scripts to allow use of tablet mode, pen, auto rotation, and auto brightness on a Thinkpad X380 Yoga.
+This contains systemd scripts to allow use of tablet mode, pen, auto rotation, and auto brightness on a Thinkpad Yoga 12.
 
 ## Status
 
 Status: Working!
 
-- [x] rotatation
+- NT[ ] rotatation
 - [x] brightness adjustment
 - [x] turn off touchscreen when using pen
-- [x] tablet mode turns off touchpad, click buttons, and trackpoint (and turns on screen keyboard)
-- [ ] sometimes the tablet mode acpi event's arn't reported after some time (or after suspend?). Workout: use a launcher on the panel
+- NT[ ] tablet mode turns off touchpad, click buttons, and trackpoint (and turns on screen keyboard)
+- NT[ ] sometimes the tablet mode acpi event's arn't reported after some time (or after suspend?). Workout: use a launcher on the panel
 
 This repo is forked from https://github.com/ffejery/thinkpad-l380-yoga-scripts with edits for the x380. Differences are:
 
@@ -34,10 +34,10 @@ For more tweaks for Xubuntu on a Thinkpad x380 yoga see [this gist](https://gist
 ```sh
 
 # place it in this exact location
-git clone https://github.com/wassname/thinkpad-x380-yoga-scripts /opt/thinkpad-x380-yoga-scripts
+git clone https://github.com/virtual-bock/thinkpad-yoga-scripts /opt/thinkpad-yoga-scripts
 
 # copy scripts to systemd
-sudo cp /opt/thinkpad-x380-yoga-scripts/systemd/* /etc/systemd/system/
+sudo cp /opt/thinkpad-yoga-scripts/systemd/* /etc/systemd/system/
 
 # enable scripts
 sudo systemctl enable yoga-tablet@${USER}.service
@@ -75,12 +75,12 @@ sudo systemctl status yoga-backlight.service
 Depending whether or not your DE rotates the Wacom orientation with
 the screen automatically edit the following file accordingly:
 
-    /opt/thinkpad-x380-yoga-scripts/rotate/thinkpad-rotate.py
+    /opt/thinkpad-yoga-scripts/rotate/thinkpad-rotate.py
 
 If you want to use an onscreen keyboard other than onboard, or disable
 opening of any keyboard when moving into tablet mode edit:
 
-    /opt/thinkpad-x380-yoga-scripts/tablet/mouse-toggle.sh
+    /opt/thinkpad-yoga-scripts/tablet/mouse-toggle.sh
 
 If your home directory is not in /home/<username> or your .Xauthority
 file is located somewhere other than your home directory you will need
